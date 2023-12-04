@@ -16,6 +16,9 @@
  */
 package org.apache.zeppelin.cluster;
 
+import edu.illinois.CTestClass;
+import edu.illinois.CTestJUnit4Runner;
+
 import org.apache.zeppelin.cluster.meta.ClusterMeta;
 import org.apache.zeppelin.cluster.meta.ClusterMetaType;
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
@@ -23,6 +26,7 @@ import org.apache.zeppelin.interpreter.remote.RemoteInterpreterUtils;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +36,8 @@ import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+@RunWith(CTestJUnit4Runner.class)
+@CTestClass
 public class ClusterSingleNodeTest {
   private static Logger LOGGER = LoggerFactory.getLogger(ClusterSingleNodeTest.class);
   private static ZeppelinConfiguration zconf;

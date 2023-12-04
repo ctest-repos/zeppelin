@@ -151,6 +151,7 @@ public class ZeppelinConfiguration {
   }
 
   public void setProperty(String name, String value) {
+    System.out.println("setProperty: " + name + " = " + value);
     if (StringUtils.isNoneBlank(name, value)) {
       ConfigTracker.markParamAsSet(name);
       this.properties.put(name, value);
