@@ -31,6 +31,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import edu.illinois.ConfigTracker;
 import javax.annotation.Nullable;
 
 import org.apache.commons.configuration2.EnvironmentConfiguration;
@@ -85,6 +86,7 @@ public class ZeppelinConfiguration {
       LOGGER.warn("Failed to load XML configuration, proceeding with a default,for a stacktrace activate the debug log");
       LOGGER.debug("Failed to load XML configuration", e);
     }
+    ConfigTracker.injectConfig((arg1, arg2) -> setProperty(arg1, (String) arg2));
   }
 
   private void loadXMLConfig(@Nullable String filename) throws ConfigurationException {
@@ -150,11 +152,13 @@ public class ZeppelinConfiguration {
 
   public void setProperty(String name, String value) {
     if (StringUtils.isNoneBlank(name, value)) {
+      ConfigTracker.markParamAsSet(name);
       this.properties.put(name, value);
     }
   }
 
   private String getStringValue(String name, String d) {
+    ConfigTracker.markParamAsUsed(name);
     String value = this.properties.get(name);
     if (value != null) {
       return value;
@@ -163,6 +167,7 @@ public class ZeppelinConfiguration {
   }
 
   private int getIntValue(String name, int d) {
+    ConfigTracker.markParamAsSet(name);
     String value = this.properties.get(name);
     if (value != null) {
       try {
@@ -175,6 +180,7 @@ public class ZeppelinConfiguration {
   }
 
   private long getLongValue(String name, long d) {
+    ConfigTracker.markParamAsSet(name);
     String value = this.properties.get(name);
     if (value != null) {
       try {
@@ -187,6 +193,7 @@ public class ZeppelinConfiguration {
   }
 
   private float getFloatValue(String name, float d) {
+    ConfigTracker.markParamAsSet(name);
     String value = this.properties.get(name);
     if (value != null) {
       try {
@@ -199,6 +206,7 @@ public class ZeppelinConfiguration {
   }
 
   private boolean getBooleanValue(String name, boolean d) {
+    ConfigTracker.markParamAsSet(name);
     String value = this.properties.get(name);
     if (value != null) {
       return Boolean.parseBoolean(value);
@@ -298,6 +306,7 @@ public class ZeppelinConfiguration {
 
   @VisibleForTesting
   public void setServerPort(int port) {
+    ConfigTracker.markParamAsSet(ConfVars.ZEPPELIN_PORT.getVarName());
     properties.put(ConfVars.ZEPPELIN_PORT.getVarName(), String.valueOf(port));
   }
 
@@ -790,6 +799,7 @@ public class ZeppelinConfiguration {
   }
 
   public void setClusterAddress(String clusterAddr) {
+    ConfigTracker.markParamAsSet(ConfVars.ZEPPELIN_CLUSTER_ADDR.getVarName());
     properties.put(ConfVars.ZEPPELIN_CLUSTER_ADDR.getVarName(), clusterAddr);
   }
 
@@ -820,6 +830,7 @@ public class ZeppelinConfiguration {
 
   @VisibleForTesting
   public void setRunMode(RUN_MODE runMode) {
+    ConfigTracker.markParamAsSet(ConfVars.ZEPPELIN_RUN_MODE.getVarName());
     properties.put(ConfVars.ZEPPELIN_RUN_MODE.getVarName(), runMode.name());
   }
 
