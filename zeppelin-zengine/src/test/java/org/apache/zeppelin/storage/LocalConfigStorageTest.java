@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.storage;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.zeppelin.util.FileUtils;
 import org.junit.Test;
@@ -33,6 +38,8 @@ import java.util.Random;
 
 import static org.junit.Assert.*;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class LocalConfigStorageTest {
     public static final String TEST_STRING = "this is a test!";
 

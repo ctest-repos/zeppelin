@@ -1,5 +1,10 @@
 package org.apache.zeppelin.interpreter.install;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
 import org.junit.After;
@@ -29,6 +34,8 @@ import static org.junit.Assert.assertTrue;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class InstallInterpreterTest {
   private File tmpDir;
   private InstallInterpreter installer;

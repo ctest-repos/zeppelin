@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.notebook.repo;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
 import org.apache.zeppelin.conf.ZeppelinConfiguration.ConfVars;
 import org.apache.zeppelin.notebook.repo.mock.VFSNotebookRepoMock;
@@ -34,6 +39,8 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 //TODO(zjffdu) move it to zeppelin-zengine
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class NotebookRepoSyncInitializationTest {
   private static final Logger LOGGER = LoggerFactory.getLogger(NotebookRepoSyncInitializationTest.class);
   private String validFirstStorageClass = "org.apache.zeppelin.notebook.repo.VFSNotebookRepo";

@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.plugin;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.zeppelin.notebook.repo.GitNotebookRepo;
 import org.apache.zeppelin.notebook.repo.NotebookRepo;
 import org.apache.zeppelin.notebook.repo.OldGitNotebookRepo;
@@ -28,6 +33,8 @@ import java.io.IOException;
 import static org.junit.Assert.assertTrue;
 
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class PluginManagerTest {
 
   @Test

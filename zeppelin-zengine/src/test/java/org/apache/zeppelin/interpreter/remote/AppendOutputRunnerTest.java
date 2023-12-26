@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.interpreter.remote;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -39,6 +44,8 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.*;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class AppendOutputRunnerTest {
 
   private static final int NUM_EVENTS = 10000;

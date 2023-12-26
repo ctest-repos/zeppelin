@@ -16,6 +16,11 @@
  */
 package org.apache.zeppelin.resource;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import com.google.gson.Gson;
 import org.apache.zeppelin.interpreter.AbstractInterpreterTest;
 import org.apache.zeppelin.interpreter.InterpreterContext;
@@ -37,6 +42,8 @@ import static org.mockito.Mockito.when;
 /**
  * Unittest for DistributedResourcePool
  */
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class DistributedResourcePoolTest extends AbstractInterpreterTest {
 
   private RemoteInterpreter intp1;

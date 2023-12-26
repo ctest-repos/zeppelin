@@ -16,6 +16,11 @@
  */
 package org.apache.zeppelin.helium;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import com.google.gson.Gson;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
@@ -27,6 +32,8 @@ import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class HeliumLocalRegistryTest {
   private File tmpDir;
 

@@ -1,5 +1,10 @@
 package org.apache.zeppelin.notebook;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.zeppelin.notebook.exception.NotePathAlreadyExistsException;
 import org.apache.zeppelin.notebook.repo.InMemoryNotebookRepo;
 import org.apache.zeppelin.user.AuthenticationInfo;
@@ -13,6 +18,8 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class NoteManagerTest {
   private NoteManager noteManager;
 

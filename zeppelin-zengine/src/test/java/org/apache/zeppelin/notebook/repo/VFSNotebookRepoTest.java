@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.notebook.repo;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import com.google.common.collect.ImmutableMap;
 import org.apache.commons.io.FileUtils;
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
@@ -37,6 +42,8 @@ import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class VFSNotebookRepoTest {
 
   private ZeppelinConfiguration zConf;

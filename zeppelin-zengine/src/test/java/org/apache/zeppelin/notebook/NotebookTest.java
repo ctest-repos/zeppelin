@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.notebook;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
 import org.apache.zeppelin.conf.ZeppelinConfiguration.ConfVars;
@@ -76,6 +81,8 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class NotebookTest extends AbstractInterpreterTest implements ParagraphJobListener {
   private static final Logger logger = LoggerFactory.getLogger(NotebookTest.class);
 

@@ -17,12 +17,19 @@
 
 package org.apache.zeppelin.notebook;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import static junit.framework.TestCase.assertEquals;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class ParagraphTextParserTest {
 
   @Test

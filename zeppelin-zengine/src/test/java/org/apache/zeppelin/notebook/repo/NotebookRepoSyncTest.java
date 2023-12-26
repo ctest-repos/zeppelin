@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.notebook.repo;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -53,6 +58,8 @@ import org.quartz.SchedulerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class NotebookRepoSyncTest {
 
   private File ZEPPELIN_HOME;

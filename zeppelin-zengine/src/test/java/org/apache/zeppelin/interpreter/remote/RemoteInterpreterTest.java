@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.interpreter.remote;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.thrift.transport.TTransportException;
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
@@ -53,6 +58,8 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class RemoteInterpreterTest extends AbstractInterpreterTest {
 
   private InterpreterSetting interpreterSetting;

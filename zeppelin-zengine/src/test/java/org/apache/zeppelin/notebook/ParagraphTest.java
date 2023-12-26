@@ -18,6 +18,11 @@
 package org.apache.zeppelin.notebook;
 
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
@@ -66,6 +71,8 @@ import org.junit.rules.ExpectedException;
 
 import org.mockito.Mockito;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class ParagraphTest extends AbstractInterpreterTest {
 
   @Test

@@ -17,6 +17,11 @@
 package org.apache.zeppelin.conf;
 
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.zeppelin.conf.ZeppelinConfiguration.ConfVars;
 import org.junit.After;
 import org.junit.Assert;
@@ -30,6 +35,8 @@ import java.net.MalformedURLException;
 import java.util.List;
 
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class ZeppelinConfigurationTest {
   @BeforeClass
   public static void clearSystemVariables() {

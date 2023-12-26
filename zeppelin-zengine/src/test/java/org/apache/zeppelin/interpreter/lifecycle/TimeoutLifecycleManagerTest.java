@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.interpreter.lifecycle;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
 import org.apache.zeppelin.interpreter.AbstractInterpreterTest;
 import org.apache.zeppelin.interpreter.ExecutionContext;
@@ -35,6 +40,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class TimeoutLifecycleManagerTest extends AbstractInterpreterTest {
 
   private File zeppelinSiteFile = new File("zeppelin-site.xml");

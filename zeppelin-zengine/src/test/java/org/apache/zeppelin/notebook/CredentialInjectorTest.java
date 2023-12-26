@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.notebook;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.mock;
@@ -28,6 +33,8 @@ import org.apache.zeppelin.user.UserCredentials;
 import org.apache.zeppelin.user.UsernamePassword;
 import org.junit.Test;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class CredentialInjectorTest {
 
   private static final String TEMPLATE =

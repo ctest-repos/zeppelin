@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.interpreter;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import com.google.common.collect.Lists;
 import org.apache.zeppelin.dep.Dependency;
 import org.apache.zeppelin.dep.DependencyResolver;
@@ -41,6 +46,8 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class InterpreterSettingTest {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(InterpreterSettingTest.class);

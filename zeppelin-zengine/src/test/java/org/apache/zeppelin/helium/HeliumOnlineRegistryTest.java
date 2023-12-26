@@ -17,6 +17,11 @@
 
 package org.apache.zeppelin.helium;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import static org.junit.Assert.assertTrue;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
@@ -27,6 +32,8 @@ import java.io.IOException;
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
 
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class HeliumOnlineRegistryTest {
   // ip 192.168.65.17 belongs to private network
   // request will be ended with connection time out error

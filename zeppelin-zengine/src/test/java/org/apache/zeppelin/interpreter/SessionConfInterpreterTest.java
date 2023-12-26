@@ -18,6 +18,11 @@
 
 package org.apache.zeppelin.interpreter;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.zeppelin.interpreter.remote.RemoteInterpreter;
 import org.junit.Test;
 
@@ -29,6 +34,8 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class SessionConfInterpreterTest {
 
   @Test

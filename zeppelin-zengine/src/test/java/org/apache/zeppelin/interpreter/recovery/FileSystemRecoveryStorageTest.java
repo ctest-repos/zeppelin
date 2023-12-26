@@ -18,6 +18,11 @@
 
 package org.apache.zeppelin.interpreter.recovery;
 
+import org.junit.runner.RunWith;
+import edu.illinois.CTestJUnit4Runner2;
+import edu.illinois.CTestClass;
+import edu.illinois.CTest;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.zeppelin.conf.ZeppelinConfiguration;
 import org.apache.zeppelin.interpreter.AbstractInterpreterTest;
@@ -40,6 +45,8 @@ import java.nio.file.Files;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+@RunWith(CTestJUnit4Runner2.class)
+@CTestClass()
 public class FileSystemRecoveryStorageTest extends AbstractInterpreterTest {
 
   private File recoveryDir = null;
